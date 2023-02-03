@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../../../constants/sizes.dart';
-import '../../../../constants/text_strings.dart';
 import '../../models/model_on_boarding.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -23,13 +21,14 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           Image(
             image: AssetImage(model.image),
-            height: model.height * 0.45,
+            height: size.height * 0.4,
           ),
           Column(
             children: [
               Text(model.title, style: Theme.of(context).textTheme.titleLarge),
               Text(
                 model.subTitle,
+                style: Theme.of(context).textTheme.titleSmall,
                 textAlign: TextAlign.center,
               ),
             ],
@@ -37,7 +36,7 @@ class OnBoardingPage extends StatelessWidget {
           Text(model.counterText,
               style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(
-            height: 50,
+            height: 80,
           )
         ],
       ),
