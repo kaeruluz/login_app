@@ -11,3 +11,18 @@ const String onBoardingSubTitle3 =
 const String onBoardingCounter1 = "1/3";
 const String onBoardingCounter2 = "2/3";
 const String onBoardingCounter3 = "3/3";
+
+// -- Welcome Screen Image
+const String welcomeTitle = "Build Awesome Apps";
+const String welcomeSubTitle =
+    "Let's put your creativity on the\n development highway.";
+
+// --GEneric Text
+const String login = "Login";
+const String signup = "Signup";
+
+// -- Login Screen TExt
+const String loginTitle = "Welcome Back";
+const String loginSubTitle = "Make it work, make it right, make it fast";
+const String rememberMer = "Remember Me?";
+const String alreadyHaveAccount = "Already have an Account?";
