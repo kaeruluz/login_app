@@ -19,42 +19,48 @@ class LoginForm extends StatelessWidget {
         children: [
           TextFormField(
             decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.person_outline_outlined),
-                labelText: AutofillHints.email,
-                hintText: AutofillHints.email,
-                border: OutlineInputBorder()),
+              prefixIcon: Icon(Icons.person_outline_outlined),
+              labelText: AutofillHints.email,
+              hintText: AutofillHints.email,
+              border: OutlineInputBorder(),
+            ),
           ),
           const SizedBox(height: formHeight - 20),
           TextFormField(
             decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
-                labelText: AutofillHints.password,
-                hintText: AutofillHints.password,
-                border: OutlineInputBorder(),
-                suffixIcon: Icon(Icons.remove_red_eye_sharp)),
+              prefixIcon: Icon(Icons.fingerprint),
+              labelText: AutofillHints.password,
+              hintText: AutofillHints.password,
+              border: OutlineInputBorder(),
+              suffixIcon: Icon(Icons.remove_red_eye_sharp),
+            ),
           ),
           const SizedBox(height: formHeight - 20),
           Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                  onPressed: () {}, child: const Text(forgetPassword))),
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text(forgetPassword),
+            ),
+          ),
           const SizedBox(
             height: formHeight + 10,
           ),
           SizedBox(
-            height: defaultSize + 10,
             width: double.infinity,
             child: ElevatedButton(
-                onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)),
-                    foregroundColor: whiteColor,
-                    backgroundColor: secondaryColor,
-                    side: const BorderSide(color: secondaryColor),
-                    padding:
-                        const EdgeInsets.symmetric(vertical: buttonHeight)),
-                child: Text(login.toUpperCase())),
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                foregroundColor: whiteColor,
+                backgroundColor: secondaryColor,
+                side: const BorderSide(color: secondaryColor),
+                padding: const EdgeInsets.symmetric(vertical: buttonHeight),
+              ),
+              child: Text(login.toUpperCase()),
+            ),
           )
         ],
       ),

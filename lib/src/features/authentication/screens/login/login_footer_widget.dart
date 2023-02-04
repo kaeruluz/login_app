@@ -15,34 +15,37 @@ class LoginFooterWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Text("OR"),
-        const SizedBox(
-          height: formHeight - 10,
-        ),
+        const SizedBox(height: formHeight - 10),
         SizedBox(
           height: formHeight + 10,
           width: double.infinity,
           child: OutlinedButton.icon(
-              icon: const Image(
-                image: AssetImage(googleLogo),
-                width: 20,
+            icon: Image.asset(googleLogo, width: 20),
+            onPressed: () {},
+            label: Text(
+              signInWithGoogle,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            style: const ButtonStyle(
+              side: MaterialStatePropertyAll(
+                BorderSide(width: 1),
               ),
-              onPressed: () {},
-              label: Text(
-                signInWithGoogle,
-                style: Theme.of(context).textTheme.titleSmall,
-              )),
+            ),
+          ),
         ),
-        const SizedBox(
-          height: formHeight + 10,
-        ),
+        const SizedBox(height: formHeight + 10),
         TextButton(
-            onPressed: null,
-            child: Text.rich(TextSpan(
-                text: dontHaveAnAccount,
-                style: Theme.of(context).textTheme.titleSmall,
-                children: const [
-                  TextSpan(text: signup, style: TextStyle(color: Colors.blue))
-                ])))
+          onPressed: null,
+          child: Text.rich(
+            TextSpan(
+              text: dontHaveAnAccount,
+              style: Theme.of(context).textTheme.titleSmall,
+              children: const [
+                TextSpan(text: signup, style: TextStyle(color: Colors.blue))
+              ],
+            ),
+          ),
+        )
       ],
     );
   }
