@@ -12,3 +12,4 @@ const String welcomeScreenImg =
 
 // -- login image
 const String googleLogo = "assets/logo/google_logo.png";
+const String loginImg = "assets/images/login_image/login_screen_image.png";

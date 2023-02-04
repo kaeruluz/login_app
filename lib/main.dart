@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:login_app/src/features/authentication/screens/on_boarding/on_boarding_screen.dart';
 import 'package:login_app/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:login_app/src/utils/theme.dart';
@@ -10,7 +11,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,

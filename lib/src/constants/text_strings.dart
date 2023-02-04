@@ -22,7 +22,10 @@ const String login = "Login";
 const String signup = "Signup";
 
 // -- Login Screen TExt
-const String loginTitle = "Welcome Back";
-const String loginSubTitle = "Make it work, make it right, make it fast";
+const String loginTitle = "Welcome Back,";
+const String loginSubTitle = "Make it work, make it right, make it fast.";
 const String rememberMer = "Remember Me?";
 const String alreadyHaveAccount = "Already have an Account?";
+const String forgetPassword = "Forget Password?";
+const String signInWithGoogle = "Sign In with Google";
+const String dontHaveAnAccount = "Don't have an Account? ";
