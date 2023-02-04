@@ -1,0 +1,32 @@
+name: Build CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "11"
+          cache: "gradle"
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+      - run: flutter --version
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Build APK
+        run: flutter build apk
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: Debug APK
+          path: build/app/outputs/flutter-apk/app-release.apk
