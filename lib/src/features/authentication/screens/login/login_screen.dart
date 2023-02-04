@@ -15,17 +15,20 @@ class LoginScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-            child: Container(
-          padding: const EdgeInsets.all(defaultSize),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              LoginHeaderWidget(size: size),
-              const LoginForm(),
-              const LoginFooterWidget()
-            ],
+          physics: const BouncingScrollPhysics(),
+          reverse: true,
+          child: Container(
+            padding: const EdgeInsets.all(defaultSize),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                LoginHeaderWidget(size: size),
+                const LoginForm(),
+                const LoginFooterWidget()
+              ],
+            ),
           ),
-        )),
+        ),
       ),
     );
   }

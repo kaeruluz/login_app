@@ -24,12 +24,13 @@ class LoginFooterWidget extends StatelessWidget {
             onPressed: () {},
             label: Text(
               signInWithGoogle,
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(fontWeight: FontWeight.bold),
             ),
             style: const ButtonStyle(
-              side: MaterialStatePropertyAll(
-                BorderSide(width: 1),
-              ),
+              side: MaterialStatePropertyAll(BorderSide(width: 1)),
             ),
           ),
         ),

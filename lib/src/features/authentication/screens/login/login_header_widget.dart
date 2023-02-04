@@ -16,12 +16,15 @@ class LoginHeaderWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Image(
-            image: const AssetImage(loginImg),
-            height: size.height * 0.3,
-          ),
-        ]),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              loginImg,
+              height: size.height * 0.3,
+            ),
+          ],
+        ),
         Text(
           loginTitle,
           style: Theme.of(context).textTheme.titleLarge,

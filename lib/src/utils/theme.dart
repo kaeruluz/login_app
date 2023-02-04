@@ -13,9 +13,4 @@ class TAppTheme {
     fontFamily: GoogleFonts.manrope().fontFamily,
     useMaterial3: true,
   );
-
-  static ThemeData darkTheme = lightTheme.copyWith(
-    brightness: Brightness.dark,
-    textTheme: TextThemes.darkTextTheme,
-  );
 }
