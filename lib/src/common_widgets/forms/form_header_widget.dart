@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 class FormHeaderWidget extends StatelessWidget {
   const FormHeaderWidget({
     super.key,
-    required this.image,
     required this.title,
     required this.subtitle,
   });
 
-  final String image, title, subtitle;
+  final String title, subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +15,6 @@ class FormHeaderWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.asset(
-          image,
-          height: size.height * 0.2,
-        ),
         Text(
           title,
           style: Theme.of(context).textTheme.titleLarge,

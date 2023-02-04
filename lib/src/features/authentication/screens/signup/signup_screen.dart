@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 import 'package:login_app/src/common_widgets/forms/form_header_widget.dart';
-import 'package:login_app/src/constants/colors.dart';
+
 import 'package:login_app/src/constants/image_strings.dart';
 import 'package:login_app/src/constants/sizes.dart';
 import 'package:login_app/src/constants/text_strings.dart';
@@ -19,9 +18,9 @@ class SignupScreen extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(defaultSize),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const FormHeaderWidget(
-                  image: signupImg,
                   title: signupTitle,
                   subtitle: signupSubTitle,
                 ),
@@ -29,7 +28,7 @@ class SignupScreen extends StatelessWidget {
                 Column(
                   children: [
                     const Text("OR"),
-                    const SizedBox(height: defaultSize),
+                    const SizedBox(height: defaultSize - 10),
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton.icon(
@@ -56,9 +55,9 @@ class SignupScreen extends StatelessWidget {
                               text: alreadyHaveAccount,
                               style: Theme.of(context).textTheme.titleSmall,
                             ),
-                            TextSpan(
-                                text: login.toUpperCase(),
-                                style: const TextStyle(color: Colors.blue)),
+                            const TextSpan(
+                                text: login,
+                                style: TextStyle(color: Colors.blue)),
                           ],
                         ),
                       ),
