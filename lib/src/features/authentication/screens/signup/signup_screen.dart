@@ -17,6 +17,8 @@ class SignupScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          reverse: true,
           child: Container(
             padding: const EdgeInsets.all(defaultSize),
             child: Column(

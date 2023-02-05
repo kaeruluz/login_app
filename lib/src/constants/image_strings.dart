@@ -16,3 +16,7 @@ const String loginImg = "assets/images/login_image/login_screen_image.png";
 
 // -- Signup Image
 const String signupImg = "assets/images/signup image/signup_image.png";
+
+// -- Forgot Password
+const String forgotPasswordImg =
+    "assets/images/forgot_password/forgot_password_image.png";

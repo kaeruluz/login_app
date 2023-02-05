@@ -84,7 +84,7 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
             TextFormField(
               controller: controller.email,
               decoration: const InputDecoration(
-                  labelText: "E-Mail",
+                  labelText: "EMail",
                   prefixIcon: Icon(
                     Icons.email_outlined,
                     color: secondaryColor,

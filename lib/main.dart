@@ -21,6 +21,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      defaultTransition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 500),
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
       themeMode: ThemeMode.light,

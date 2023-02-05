@@ -33,3 +33,11 @@ const String dontHaveAnAccount = "Don't have an Account? ";
 // -- Sign Up Screen Text
 const String signupTitle = "Get on Board!";
 const String signupSubTitle = "Create your profile to start your Journey...";
+
+// -- Forgot Password TExt
+const String forgotPasswordTitle = "Forgot Password";
+const String forgotPasswordSubTitle =
+    "Select your email below to reset your password.";
+
+// -- Forgot password button text
+const String next = "Next";
