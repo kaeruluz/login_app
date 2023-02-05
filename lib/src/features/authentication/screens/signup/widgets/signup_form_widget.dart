@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:login_app/src/constants/sizes.dart';
 import 'package:login_app/src/features/authentication/controllers/signup_controller.dart';
 import 'package:login_app/src/features/authentication/models/user_model.dart';
+import 'package:login_app/src/features/authentication/screens/home/home_screen.dart';
 
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/text_strings.dart';

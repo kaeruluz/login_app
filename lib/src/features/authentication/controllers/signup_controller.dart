@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_app/src/features/authentication/models/user_model.dart';
-import 'package:login_app/src/features/authentication/screens/on_boarding/on_boarding_screen.dart';
+import 'package:login_app/src/features/authentication/screens/home/home_screen.dart';
 import 'package:login_app/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:login_app/src/repository/authentication_repository/exceptions/user_repository/user_repository.dart';
 
@@ -29,6 +29,6 @@ class SignUpController extends GetxController {
 
   void createUser(UserModel user) async {
     await userRepo.createUser(user);
-    Get.to(() => OnBoardingScreen());
+    Get.to(() => ImageUpload());
   }
 }

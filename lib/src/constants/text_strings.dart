@@ -41,3 +41,6 @@ const String forgotPasswordSubTitle =
 
 // -- Forgot password button text
 const String next = "Next";
+
+// -- Home Screen Text
+const String appBarTitle = "Welcome to Home Screen";
