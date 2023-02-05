@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/src/constants/colors.dart';
-
+import 'package:login_app/src/features/authentication/controllers/signup_controller.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
+
+import 'package:login_app/src/features/authentication/models/user_model.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -44,7 +46,7 @@ class LoginForm extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: formHeight + 10,
+            height: formHeight,
           ),
           SizedBox(
             width: double.infinity,

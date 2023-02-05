@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:login_app/src/constants/sizes.dart';
+import 'package:login_app/src/features/authentication/controllers/signup_controller.dart';
+import 'package:login_app/src/features/authentication/models/user_model.dart';
 
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/text_strings.dart';
@@ -23,9 +26,12 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignUpController());
+    final formKey = GlobalKey<FormState>();
     return Container(
       padding: const EdgeInsets.symmetric(vertical: formHeight - 10),
       child: Form(
+        key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -61,6 +67,7 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
             ),
             const SizedBox(height: defaultSize - 20),
             TextFormField(
+              controller: controller.fullName,
               decoration: const InputDecoration(
                   labelText: "Full Name",
                   prefixIcon: Icon(
@@ -75,6 +82,7 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
             ),
             const SizedBox(height: defaultSize - 20),
             TextFormField(
+              controller: controller.email,
               decoration: const InputDecoration(
                   labelText: "E-Mail",
                   prefixIcon: Icon(
@@ -89,6 +97,7 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
             ),
             const SizedBox(height: defaultSize - 20),
             TextFormField(
+              controller: controller.phoneNo,
               decoration: const InputDecoration(
                   labelText: "Phone No.",
                   prefixIcon: Icon(
@@ -103,6 +112,7 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
             ),
             const SizedBox(height: defaultSize - 20),
             TextFormField(
+              controller: controller.password,
               decoration: const InputDecoration(
                   labelText: "Password",
                   prefixIcon: Icon(
@@ -119,7 +129,15 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  final user = UserModel(
+                    email: controller.email.text.trim(),
+                    password: controller.password.text.trim(),
+                    fullName: controller.fullName.text.trim(),
+                    phoneNo: controller.phoneNo.text.trim(),
+                  );
+                  SignUpController.instance.createUser(user);
+                },
                 child: Text(signup.toUpperCase()),
               ),
             )
