@@ -56,7 +56,7 @@ class _ImageUploadState extends State<ImageUpload> {
                 //handle errors/success
                 try {
                   // store the file
-                  await referenceImageToUpload.putFile(File(file!.path));
+                  await referenceImageToUpload.putFile(File(file.path));
 
                   // success: get downloadUrl
                   imageUrl = await referenceImageToUpload.getDownloadURL();

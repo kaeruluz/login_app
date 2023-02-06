@@ -15,15 +15,16 @@ class UserRepository extends GetxController {
         .add(user.toJson())
         .whenComplete(() => Get.snackbar(
             "Success", "You account has been created.",
-            snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Colors.grey.shade700.withOpacity(0.1)))
+            snackPosition: SnackPosition.TOP,
+            colorText: Colors.black87,
+            backgroundColor: Colors.grey.shade800.withOpacity(0.1)))
         .catchError((error, stackTrace) {
       Get.snackbar(
         "Error",
         "Something went wrong. Try Again Please!",
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.redAccent.withOpacity(0.1),
-        colorText: Colors.red,
+        snackPosition: SnackPosition.TOP,
+        colorText: Colors.black87,
+        backgroundColor: Colors.grey.shade800.withOpacity(0.1),
       );
       print(error.toString());
     });
@@ -34,16 +35,17 @@ class UserRepository extends GetxController {
         .collection("Info")
         .add(info.toJson())
         .whenComplete(() => Get.snackbar(
-            "Success", "You account has been created.",
+            "Login Successful", "You have been logged in.",
             snackPosition: SnackPosition.TOP,
-            backgroundColor: Colors.grey.shade700.withOpacity(0.1)))
+            colorText: Colors.black87,
+            backgroundColor: Colors.grey.shade800.withOpacity(0.1)))
         .catchError((error, stackTrace) {
       Get.snackbar(
         "Error",
         "Something went wrong. Try Again Please!",
         snackPosition: SnackPosition.TOP,
-        backgroundColor: Colors.redAccent.withOpacity(0.1),
-        colorText: Colors.red,
+        backgroundColor: Colors.grey.shade800.withOpacity(0.1),
+        colorText: Colors.black87,
       );
       print(error.toString());
     });

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:login_app/src/constants/sizes.dart';
 import 'package:login_app/src/features/authentication/controllers/signup_controller.dart';
 import 'package:login_app/src/features/authentication/models/user_model.dart';
-import 'package:login_app/src/features/authentication/screens/home/home_screen.dart';
 
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/text_strings.dart';
@@ -66,6 +65,28 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
                             BorderSide(width: 1.0, color: secondaryColor)),
                     labelText: "User Type",
                     labelStyle: Theme.of(context).textTheme.titleSmall),
+              ),
+              const SizedBox(height: defaultSize - 20),
+              TextFormField(
+                validator: (value) {
+                  if (value!.isEmpty || value.length < 6) {
+                    return 'Password should contain atleast 6 characters.';
+                  } else {
+                    return null;
+                  }
+                },
+                controller: controller.year,
+                decoration: const InputDecoration(
+                    labelText: "Admission/Passout Year",
+                    prefixIcon: Icon(
+                      Icons.calendar_month_rounded,
+                      color: secondaryColor,
+                    ),
+                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(width: 1.0, color: secondaryColor)),
+                    labelStyle: TextStyle(color: secondaryColor)),
               ),
               const SizedBox(height: defaultSize - 20),
               TextFormField(
@@ -135,6 +156,7 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
               ),
               const SizedBox(height: defaultSize - 20),
               TextFormField(
+                obscureText: true,
                 validator: (value) {
                   if (value!.isEmpty || value.length < 6) {
                     return 'Password should contain atleast 6 characters.';
@@ -160,13 +182,17 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    final user = UserModel(
-                      email: controller.email.text.trim(),
-                      password: controller.password.text.trim(),
-                      fullName: controller.fullName.text.trim(),
-                      phoneNo: controller.phoneNo.text.trim(),
-                    );
-                    SignUpController.instance.createUser(user);
+                    if (formKey.currentState?.validate() ?? false) {
+                      final user = UserModel(
+                        userType: controller.userType.text.trim(),
+                        year: controller.year.text.trim(),
+                        email: controller.email.text.trim(),
+                        password: controller.password.text.trim(),
+                        fullName: controller.fullName.text.trim(),
+                        phoneNo: controller.phoneNo.text.trim(),
+                      );
+                      SignUpController.instance.createUser(user);
+                    }
                   },
                   child: Text(signup.toUpperCase()),
                 ),

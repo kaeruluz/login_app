@@ -7,18 +7,26 @@ import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
 import '../../models/login_model.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   LoginForm({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
   String email = '';
   String password = '';
+
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
     return Form(
+      key: formKey,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: formHeight - 10),
         child: Column(
@@ -32,6 +40,7 @@ class LoginForm extends StatelessWidget {
                   return null;
                 }
               },
+              controller: controller.email,
               decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.person_outline_outlined),
                   labelText: "Email",
@@ -52,6 +61,7 @@ class LoginForm extends StatelessWidget {
                   return null;
                 }
               },
+              controller: controller.password,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.fingerprint),
                 labelText: "Password",
@@ -80,10 +90,12 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  final info = LoginModel(
-                      email: controller.email.text,
-                      password: controller.password.text);
-                  LoginController.instance.signInUser(info);
+                  if (formKey.currentState?.validate() ?? false) {
+                    final info = LoginModel(
+                        email: controller.email.text,
+                        password: controller.password.text);
+                    LoginController.instance.signInUser(info);
+                  }
                 },
                 child: Text(login.toUpperCase()),
               ),
