@@ -69,8 +69,8 @@ class _SignupFormWidgetState extends State<SignupFormWidget> {
               const SizedBox(height: defaultSize - 20),
               TextFormField(
                 validator: (value) {
-                  if (value!.isEmpty || value.length < 6) {
-                    return 'Password should contain atleast 6 characters.';
+                  if (value!.isEmpty || value.length < 4) {
+                    return 'Year should contain atleast 4characters.';
                   } else {
                     return null;
                   }
