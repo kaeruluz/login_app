@@ -13,27 +13,29 @@ class LoginHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              loginImg,
-              height: size.height * 0.3,
-            ),
-          ],
-        ),
-        Text(
-          loginTitle,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        Text(
-          loginSubTitle,
-          style: Theme.of(context).textTheme.titleSmall,
-        ),
-      ],
+    return SafeArea(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                loginImg,
+                height: size.height * 0.3,
+              ),
+            ],
+          ),
+          Text(
+            loginTitle,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          Text(
+            loginSubTitle,
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+        ],
+      ),
     );
   }
 }

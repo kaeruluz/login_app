@@ -26,7 +26,7 @@ const String loginTitle = "Welcome Back,";
 const String loginSubTitle = "Make it work, make it right, make it fast.";
 const String rememberMer = "Remember Me?";
 const String alreadyHaveAccount = "Already have an Account? ";
-const String forgetPassword = "Forget Password?";
+const String forgetPassword = "Forgot Password?";
 const String signInWithGoogle = "Sign In with Google";
 const String dontHaveAnAccount = "Don't have an Account? ";
 
@@ -35,7 +35,7 @@ const String signupTitle = "Get on Board!";
 const String signupSubTitle = "Create your profile to start your Journey...";
 
 // -- Forgot Password TExt
-const String forgotPasswordTitle = "Forgot Password";
+const String forgotPasswordTitle = "Forgot Password?";
 const String forgotPasswordSubTitle =
     "Select your email below to reset your password.";
 

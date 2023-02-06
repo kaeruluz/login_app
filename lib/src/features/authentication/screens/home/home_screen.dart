@@ -78,9 +78,8 @@ class _ImageUploadState extends State<ImageUpload> {
     //Select Image
     image = await ImagePicker().pickImage(source: ImageSource.gallery)
         as PickedFile;
-    print(image);
     var file = File(image.path);
-    print(file);
+
     if (image != null) {
       //Upload to Firebase
       var snapshot =
