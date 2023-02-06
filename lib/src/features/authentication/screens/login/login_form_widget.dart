@@ -14,7 +14,7 @@ class LoginForm extends StatelessWidget {
 
   String email = '';
   String password = '';
-  bool login = false;
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
@@ -44,6 +44,7 @@ class LoginForm extends StatelessWidget {
             ),
             const SizedBox(height: formHeight - 20),
             TextFormField(
+              obscureText: true,
               validator: (value) {
                 if (value!.isEmpty || value.length < 6) {
                   return 'Password length should of atleast 6 characters.';
@@ -79,17 +80,12 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  login = true;
                   final info = LoginModel(
                       email: controller.email.text,
                       password: controller.password.text);
                   LoginController.instance.signInUser(info);
                 },
-                child: Text(
-                  "LOGIN",
-                  style: Theme.of(context).textTheme.titleLarge,
-                  selectionColor: Colors.white,
-                ),
+                child: Text(login.toUpperCase()),
               ),
             ),
           ],

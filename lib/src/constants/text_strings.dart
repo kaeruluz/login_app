@@ -44,3 +44,4 @@ const String next = "Next";
 
 // -- Home Screen Text
 const String appBarTitle = "Welcome to Home Screen";
+const String uploadImgButton = "Upload a File";

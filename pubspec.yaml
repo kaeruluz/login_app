@@ -56,7 +56,6 @@ dev_dependencies:
   
 flutter_native_splash:
   color: "#f7f6f1"
-  
   image: assets/images/splash_images/splash_image.png
   
 
@@ -87,6 +86,7 @@ flutter:
     - assets/images/login_image/
     - assets/images/signup image/
     - assets/images/forgot_password/
+    - assets/images/home_screen/
       
 
   # An image asset can refer to one or more resolution-specific "variants", see

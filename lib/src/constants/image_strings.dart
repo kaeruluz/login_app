@@ -20,3 +20,6 @@ const String signupImg = "assets/images/signup image/signup_image.png";
 // -- Forgot Password
 const String forgotPasswordImg =
     "assets/images/forgot_password/forgot_password_image.png";
+
+// -- Home Screen
+const String uploadImg = "assets/images/home_screen/image.png";
